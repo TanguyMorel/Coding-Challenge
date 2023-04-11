@@ -1,0 +1,262 @@
+@media screen and (max-width:1440px) {
+
+    @font-face {
+        font-family: title-serif-regular;
+        src: url(fonts/Crimson_Text/CrimsonText-Regular.ttf);
+    }
+
+
+    @font-face {
+        font-family: texte;
+        src: url(fonts/Space_Grotesk/SpaceGrotesk-VariableFont_wght.ttf);
+    }
+
+    *,
+    ::before,
+    ::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    :root {
+        --color-text: #c92d1f;
+        --background-color: #eae1d4;
+        --active: 100%;
+    }
+
+    body {
+        background-color: var(--background-color);
+    }
+
+
+    header {
+        width: 100%;
+        height: 100vh;
+    }
+
+    .sec-1 {
+        width: 100%;
+        height: 1000px;
+    }
+
+    .selected-work {
+        width: 100%;
+        height: 60px;
+        position: relative;
+    }
+
+    .selected-work::before,
+    .selected-work::after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 2px;
+        background-color: var(--color-text);
+    }
+
+    .selected-work::before {
+        top: 0;
+    }
+
+    .selected-work::after {
+        bottom: 0;
+    }
+
+    .selected-work-text {
+        width: 90%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
+    }
+
+    .selected-work p {
+        text-transform: uppercase;
+        font-family: texte;
+        color: var(--color-text);
+        font-weight: bolder;
+        letter-spacing: 5px;
+        font-size: 13px;
+    }
+
+    .selected-work button {
+        background-color: transparent;
+        border: none;
+    }
+
+    .selected-work button a {
+        text-decoration: none;
+    }
+
+    .selected-work button a p {
+        font-weight: 100;
+    }
+
+    .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 200px;
+        /* border-bottom: solid 2px #c92d1f; */
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+    }
+
+    .button::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--background-color);
+        z-index: 5;
+        transition: transform 250ms ease-out;
+    }
+
+    .button::after{
+        content: "";
+        position: absolute;
+        width: var(--active, 50%);
+        height: 2px;
+        background-color: var(--color-text);
+        bottom: 0;
+        left: 0;
+        z-index: 5;
+    }
+
+    .button.active .button::after{
+        width: 100%;
+    }
+
+    .background img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 250ms ease-out;
+    }
+
+    .button:hover .background img {
+        transform: scale(1.2);
+    }
+
+    .button:hover::before {
+        transform: translateY(-100%);
+    }
+
+    .button-inside {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        height: 50%;
+        /* background-color: green; */
+        z-index: 10;
+    }
+
+    .button-name {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 80%;
+        height: 100%;
+        /* background-color: orange; */
+    }
+
+
+    .number {
+        display: flex;
+        height: 100%;
+        width: 50px;
+        position: relative;
+    }
+
+    .number::after {
+        content: "";
+        position: absolute;
+        top: 25px;
+        left: -2px;
+        background-color: var(--color-text);
+        width: 25px;
+        height: 2px;
+    }
+
+    .number p {
+        font-family: texte;
+        font-weight: bolder;
+        font-size: 18px;
+        color: var(--color-text);
+    }
+
+    .button-title {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        height: 100%;
+        /* background-color: blue; */
+    }
+
+
+
+    .button-title p {
+        font-family: title;
+        font-size: 122px;
+        font-weight: lighter;
+        transition: color 250ms ease-in-out;
+        color: var(--color-text);
+    }
+
+    .button:hover .button-title p {
+        color: white;
+    }
+
+    .button:hover .number p {
+        color: white;
+    }
+
+    .button:hover .number::after {
+        background-color: white;
+    }
+
+    .cat {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+        width: 175px;
+        height: 100%;
+        /* background-color: red; */
+    }
+
+    .thin,
+    .bold{
+        font-family: texte;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--color-text);
+    }
+
+    .thin{
+        font-size: 11px;
+    }
+
+    .bold{
+        font-size: 20px;
+        font-weight: bolder;
+    }
+
+    .button:hover .thin{
+        color: white;
+    }
+
+    .button:hover .bold{
+        color: white;
+    }
+
+
+}
